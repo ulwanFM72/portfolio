@@ -1,9 +1,22 @@
 import { useState } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
-import { NAV_ITEMS } from '@/data/site';
+import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
+import { BRUT_INTERACTIVE, ToggleSwitch } from './ui';
+import { useTheme } from '@/context/ThemeContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar({ active, onNavigate }) {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme, mounted } = useTheme();
+  const { lang, toggleLang, t } = useLanguage();
+
+  const NAV_ITEMS = [
+    { id: 'home', label: t.nav.home },
+    { id: 'about', label: t.nav.about },
+    { id: 'skills', label: t.nav.skills },
+    { id: 'projects', label: t.nav.projects },
+    { id: 'experience', label: t.nav.experience },
+    { id: 'contact', label: t.nav.contact },
+  ];
 
   const handleClick = (id) => {
     onNavigate(id);
@@ -29,18 +42,34 @@ export default function Navbar({ active, onNavigate }) {
           ))}
         </nav>
 
-        <button className="md:hidden w-10 h-10 flex items-center justify-center bg-white border-[3px] border-ink" onClick={() => setOpen((o) => !o)} aria-label={open ? 'Tutup menu' : 'Buka menu'} aria-expanded={open}>
-          {open ? <X size={20} strokeWidth={3} /> : <Menu size={20} strokeWidth={3} />}
-        </button>
+        <div className="flex items-center gap-2">
+          {mounted && (
+            <button onClick={toggleTheme} aria-label={theme === 'dark' ? 'Aktifkan mode terang' : 'Aktifkan mode gelap'} className={`hidden sm:flex w-10 h-10 items-center justify-center bg-surface ${BRUT_INTERACTIVE}`}>
+              {theme === 'dark' ? <Sun size={16} strokeWidth={3} /> : <Moon size={16} strokeWidth={3} />}
+            </button>
+          )}
+
+          <ToggleSwitch checked={lang === 'en'} onChange={toggleLang} leftLabel="ID" rightLabel="EN" ariaLabel="Ganti bahasa" />
+
+          <button className={`md:hidden w-10 h-10 flex items-center justify-center bg-surface ${BRUT_INTERACTIVE}`} onClick={() => setOpen((o) => !o)} aria-label={open ? 'Tutup menu' : 'Buka menu'} aria-expanded={open}>
+            {open ? <X size={20} strokeWidth={3} /> : <Menu size={20} strokeWidth={3} />}
+          </button>
+        </div>
       </div>
 
-      <div className={`md:hidden mx-3 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${open ? 'max-h-96 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-        <div className="flex flex-col bg-white border-[3px] border-ink shadow-brut-sm">
+      <div className={`md:hidden mx-3 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${open ? 'max-h-[28rem] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+        <div className="flex flex-col bg-surface border-[3px] border-ink shadow-brut-sm">
           {NAV_ITEMS.map((item, i) => (
             <button key={item.id} onClick={() => handleClick(item.id)} className={`text-left px-4 py-3 font-bold uppercase text-sm ${i !== 0 ? 'border-t-[3px] border-ink' : ''} ${active === item.id ? 'bg-lime' : ''}`}>
               {item.label}
             </button>
           ))}
+          {mounted && (
+            <button onClick={toggleTheme} className="sm:hidden flex items-center gap-2 text-left px-4 py-3 font-bold uppercase text-sm border-t-[3px] border-ink">
+              {theme === 'dark' ? <Sun size={16} strokeWidth={3} /> : <Moon size={16} strokeWidth={3} />}
+              {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+            </button>
+          )}
         </div>
       </div>
     </header>

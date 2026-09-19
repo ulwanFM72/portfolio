@@ -22,7 +22,7 @@ export const SOCIALS = [
 export const PROFILE = {
   name: 'Ulwan Fauzul Muqtaf',
   initials: 'UFM',
-  role: 'Web Developer / Informatics Student',
+  role: 'Juniors Web Developer / Informatics Student',
   email: 'ulwantanjung71@gmail.com',
   phone: '+62 58-6063-9317',
   location: 'Cijati, Cianjur, Jawa Barat, Indonesia',

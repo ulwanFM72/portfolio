@@ -1,5 +1,5 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
-import { NAV_ITEMS, SOCIALS, PROFILE } from "@/data/site";
+import { Github, Linkedin, Instagram } from 'lucide-react';
+import { NAV_ITEMS, SOCIALS, PROFILE } from '@/data/site';
 
 const ICONS = { Github, Linkedin, Instagram };
 
@@ -10,11 +10,7 @@ export default function Footer({ onNavigate }) {
         <p className="font-bold text-sm">© 2026 {PROFILE.name}. All rights reserved.</p>
         <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           {NAV_ITEMS.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className="text-xs font-bold uppercase opacity-80 hover:opacity-100"
-            >
+            <button key={item.id} onClick={() => onNavigate(item.id)} className="text-xs font-bold uppercase opacity-80 hover:opacity-100">
               {item.label}
             </button>
           ))}
@@ -23,14 +19,7 @@ export default function Footer({ onNavigate }) {
           {SOCIALS.map(({ label, href, icon }) => {
             const Icon = ICONS[icon];
             return (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="w-8 h-8 flex items-center justify-center bg-white text-ink"
-              >
+              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-8 h-8 flex items-center justify-center bg-surface text-ink">
                 <Icon size={14} strokeWidth={2.5} />
               </a>
             );
