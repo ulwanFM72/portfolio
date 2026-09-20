@@ -1,3 +1,7 @@
+import projectProfilSekolah from '@/assets/images/project-profil-sekolah.png';
+import projectEkstrakurikuler from '@/assets/images/project-ekstrakurikuler.png';
+import projectInventaris from '@/assets/images/project-inventaris.png';
+
 export const PROJECTS = [
   {
     name_id: 'Website Profil Sekolah',
@@ -10,6 +14,7 @@ export const PROJECTS = [
     demo: '#',
     code: '#',
     accent: '#2B4EFF',
+    image: projectProfilSekolah,
   },
   {
     name_id: 'Website Pendaftaran Ekstrakurikuler',
@@ -22,6 +27,7 @@ export const PROJECTS = [
     demo: '#',
     code: '#',
     accent: '#FF5C8A',
+    image: projectEkstrakurikuler,
   },
   {
     name_id: 'Inventaris Sekolah',
@@ -34,5 +40,6 @@ export const PROJECTS = [
     demo: '#',
     code: '#',
     accent: '#C1F73A',
+    image: projectInventaris,
   },
 ];

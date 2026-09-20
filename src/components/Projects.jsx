@@ -2,6 +2,7 @@ import { Github, ExternalLink } from 'lucide-react';
 import { Blob, SectionLabel } from './ui';
 import { PROJECTS } from '@/data/projects';
 import { useLanguage } from '@/context/LanguageContext';
+import Image from 'next/image';
 
 export default function Projects() {
   const { t } = useLanguage();
@@ -20,12 +21,18 @@ export default function Projects() {
 
             return (
               <div key={name} className="flex flex-col bg-surface transition-transform duration-150 hover:-translate-y-1.5 border-[3px] border-ink shadow-brut">
-                <div className="h-32 flex items-center justify-center font-black text-2xl border-b-[3px] border-ink" style={{ background: p.accent }}>
-                  {name
-                    .split(' ')
-                    .map((w) => w[0])
-                    .slice(0, 2)
-                    .join('')}
+                <div className="h-32 relative border-b-[3px] border-ink overflow-hidden" style={{ background: p.accent }}>
+                  {p.image ? (
+                    <Image src={p.image} alt={name} fill className="object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center font-black text-2xl">
+                      {name
+                        .split(' ')
+                        .map((w) => w[0])
+                        .slice(0, 2)
+                        .join('')}
+                    </div>
+                  )}
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-black text-lg mb-2 leading-tight">{name}</h3>
