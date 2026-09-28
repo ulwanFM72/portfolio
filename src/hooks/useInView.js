@@ -11,7 +11,7 @@ export function useInView(options = { threshold: 0.3 }) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
-        observer.disconnect(); // animasi cukup jalan sekali
+        observer.disconnect();
       }
     }, options);
 

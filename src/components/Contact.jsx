@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Github, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Github, Linkedin, Instagram } from 'lucide-react';
 import { Blob, SectionLabel, BrutButton } from './ui';
 import { SOCIALS, PROFILE } from '@/data/site';
 import { useLanguage } from '@/context/LanguageContext';
 
 const ICONS = { Github, Linkedin, Instagram };
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meaoenqe';
 
 export default function Contact() {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle');
 
   const validate = () => {
     const e = {};
@@ -22,14 +23,35 @@ export default function Contact() {
     return e;
   };
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
     const e = validate();
     setErrors(e);
-    if (Object.keys(e).length === 0) {
-      setSent(true);
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSent(false), 4000);
+    if (Object.keys(e).length > 0) return;
+
+    setStatus('sending');
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus('sent');
+        setForm({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
     }
   };
 
@@ -88,12 +110,20 @@ export default function Contact() {
             </div>
             {field('subject', t.contact.subject)}
             {field('message', t.contact.message, 'textarea')}
+
             <BrutButton type="submit" accent="#C1F73A">
-              {t.contact.send} <Send size={16} strokeWidth={3} />
+              {status === 'sending' ? (t.lang === 'en' ? 'Sending...' : 'Mengirim...') : t.contact.send} <Send size={16} strokeWidth={3} />
             </BrutButton>
-            {sent && (
+
+            {status === 'sent' && (
               <p className="flex items-center gap-2 text-sm font-bold text-ink">
                 <CheckCircle2 size={16} strokeWidth={3} /> {t.contact.sent}
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="flex items-center gap-2 text-sm font-bold text-pink">
+                <AlertCircle size={16} strokeWidth={3} />
+                {t.lang === 'en' ? 'Failed to send. Please try again.' : 'Gagal mengirim. Silakan coba lagi.'}
               </p>
             )}
           </form>
