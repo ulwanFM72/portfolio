@@ -14,7 +14,7 @@ export default function About() {
   return (
     <Blob id="about" className="py-20 px-4 md:px-6 bg-surface">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel>{t.about.label}</SectionLabel>
+        <SectionLabel>{t.about.label}</SectionLabel>.
         <div className="grid md:grid-cols-[1.1fr_1fr] gap-10">
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">{t.about.heading}</h2>
