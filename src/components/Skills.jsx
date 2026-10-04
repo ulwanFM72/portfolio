@@ -33,8 +33,7 @@ export default function Skills() {
   return (
     <Blob id="skills" className="py-20 px-4 md:px-6 bg-base">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel>{t.skills.label}</SectionLabel>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.skills.heading}</h2>
+        <SectionLabel>{t.skills.label}</SectionLabel>.<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.skills.heading}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {SKILLS.map((s, i) => (
             <SkillCard key={s.name} skill={s} index={i} />

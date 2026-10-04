@@ -11,8 +11,7 @@ export default function Projects() {
   return (
     <Blob id="projects" className="py-20 px-4 md:px-6 bg-surface">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel>{t.projects.label}</SectionLabel>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.projects.heading}</h2>
+        <SectionLabel>{t.projects.label}</SectionLabel>.<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.projects.heading}</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {PROJECTS.map((p) => {
             const name = isEn ? p.name_en : p.name_id;
