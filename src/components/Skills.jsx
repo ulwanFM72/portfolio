@@ -40,6 +40,7 @@ export default function Skills() {
             <SkillCard key={s.name} skill={s} index={i} />
           ))}
         </div>
+        .
       </div>
     </Blob>
   );

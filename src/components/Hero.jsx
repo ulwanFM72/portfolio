@@ -42,7 +42,7 @@ export default function Hero({ onNavigate }) {
                 );
               })}
             </div>
-          </div>
+          </div>.
           <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem]">
             <div className="w-full h-full bg-lime border-[3px] border-ink shadow-brut overflow-hidden relative">
               <Image src={profilePic} alt={`Foto profil ${PROFILE.name}`} fill className="object-cover" />
