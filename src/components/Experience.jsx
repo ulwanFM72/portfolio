@@ -9,7 +9,7 @@ export default function Experience() {
   return (
     <Blob id="experience" className="py-20 px-4 md:px-6 bg-base">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel>{t.experience.label}</SectionLabel>.
+        <SectionLabel>{t.experience.label}</SectionLabel>
         <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.experience.heading}</h2>
         <div className="flex flex-col gap-5">
           {EXPERIENCE.map((e) => {
