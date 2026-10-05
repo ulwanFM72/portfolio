@@ -60,7 +60,6 @@ export default function Contact() {
       <label htmlFor={name} className="text-sm font-bold">
         {label}
       </label>
-      .
       {type === 'textarea' ? (
         <textarea id={name} rows={4} value={form[name]} onChange={(e) => setForm((f) => ({ ...f, [name]: e.target.value }))} className="px-3 py-2 bg-surface outline-none focus:bg-base border-[3px] border-ink" />
       ) : (
