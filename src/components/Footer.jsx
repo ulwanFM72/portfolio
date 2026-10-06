@@ -7,7 +7,7 @@ export default function Footer({ onNavigate }) {
   return (
     <footer className="px-4 md:px-6 pb-6">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-ink text-white dark:text-[#0F0F0F] border-[3px] border-ink shadow-brut-sm">
-        <p className="font-bold text-sm">© 2026 {PROFILE.name}. All rights reserved.</p>
+        <p className="font-bold text-sm">© 2026 {PROFILE.name}. All rights reserved.</p>.
         <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           {NAV_ITEMS.map((item) => (
             <button key={item.id} onClick={() => onNavigate(item.id)} className="text-xs font-bold uppercase opacity-80 hover:opacity-100">
