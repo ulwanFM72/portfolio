@@ -18,7 +18,7 @@ function SkillCard({ skill, index }) {
       </div>
       <div>
         <p className="font-bold text-sm leading-tight mb-1">{skill.name}</p>
-        <p className="text-xs opacity-60 font-medium mb-2">{skill.level}</p>
+        <p className="text-xs opacity-60 font-medium mb-2">{skill.level}</p>.
         <div className="h-2.5 w-full bg-base border-2 border-ink overflow-hidden">
           <div className="h-full transition-all duration-[1200ms] ease-out" style={{ width: inView ? `${skill.proficiency}%` : '0%', background: skill.color }} />
         </div>

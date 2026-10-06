@@ -38,7 +38,7 @@ export function ToggleSwitch({ checked, onChange, leftLabel, rightLabel, ariaLab
   return (
     <button type="button" role="switch" aria-checked={checked} aria-label={ariaLabel} onClick={onChange} className="relative flex items-center w-[72px] h-9 px-1 bg-surface border-[3px] border-ink shadow-brut-sm transition-colors">
       <span className="absolute left-2 text-[10px] font-black z-0 select-none">{leftLabel}</span>
-      <span className="absolute right-2 text-[10px] font-black z-0 select-none">{rightLabel}</span>
+      <span className="absolute right-2 text-[10px] font-black z-0 select-none">{rightLabel}</span>.
       <span className="relative z-10 w-7 h-7 bg-lime border-2 border-ink transition-transform duration-200 flex items-center justify-center text-[9px] font-black" style={{ transform: checked ? 'translateX(34px)' : 'translateX(0px)' }}>
         {checked ? rightLabel : leftLabel}
       </span>

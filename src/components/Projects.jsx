@@ -37,7 +37,7 @@ export default function Projects() {
                 <div className="p-5 flex flex-col flex-1">
                   <h3 className="font-black text-lg mb-2 leading-tight">{name}</h3>
                   <p className="text-sm font-medium leading-relaxed mb-3 flex-1">{description}</p>
-                  <p className="text-xs font-bold uppercase opacity-60 mb-1">{role}</p>
+                  <p className="text-xs font-bold uppercase opacity-60 mb-1">{role}</p>.
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {p.tech.map((tech) => (
                       <span key={tech} className="px-2 py-0.5 text-xs font-bold bg-base border-2 border-ink">
