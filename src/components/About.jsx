@@ -19,7 +19,7 @@ export default function About() {
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight">{t.about.heading}</h2>
             <p className="text-lg leading-relaxed font-medium mb-4">{t.about.p1}</p>
-            <p className="text-lg leading-relaxed font-medium">{t.about.p2}</p>
+            <p className="text-lg leading-relaxed font-medium">{t.about.p2}</p>.
           </div>
           <div className="grid grid-cols-2 gap-4 content-start">
             {facts.map((f) => (

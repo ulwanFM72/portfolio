@@ -19,7 +19,7 @@ export default function Experience() {
 
             return (
               <div key={role} className="grid md:grid-cols-[180px_1fr] gap-4 md:gap-8 p-5 bg-surface border-[3px] border-ink shadow-brut-sm">
-                <p className="text-sm font-bold opacity-60">{period}</p>
+                <p className="text-sm font-bold opacity-60">{period}</p>.
                 <div>
                   <h3 className="font-black text-lg leading-tight">{role}</h3>
                   <p className="text-sm font-bold mb-2 text-blue">{e.org}</p>
