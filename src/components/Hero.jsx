@@ -47,7 +47,7 @@ export default function Hero({ onNavigate }) {
             <div className="w-full h-full bg-lime border-[3px] border-ink shadow-brut overflow-hidden relative">
               <Image src={profilePic} alt={`Foto profil ${PROFILE.name}`} fill className="object-cover" />
             </div>
-            <span className="absolute -bottom-4 -left-4 px-3 py-1 bg-pink text-sm font-bold border-[3px] border-ink z-20">{t.hero.openToWork}</span>.
+            <span className="absolute -bottom-4 -left-4 px-3 py-1 bg-pink text-sm font-bold border-[3px] border-ink z-20">{t.hero.openToWork}</span>
           </div>
         </div>
       </div>

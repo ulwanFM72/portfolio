@@ -30,7 +30,7 @@ export default function Navbar({ active, onNavigate }) {
           <span className="w-8 h-8 flex items-center justify-center bg-blue text-white border-[3px] border-ink">
             <Code2 size={16} strokeWidth={3} />
           </span>
-          . Zul.dev
+          Zul.dev
         </button>
 
         <div className="flex items-center gap-6">
