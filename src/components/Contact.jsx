@@ -87,7 +87,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs font-bold uppercase opacity-60">{label}</p>
-                  <p className="font-bold">{value}</p>.
+                  <p className="font-bold">{value}</p>
                 </div>
               </div>
             ))}
