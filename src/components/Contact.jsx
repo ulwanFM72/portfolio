@@ -72,8 +72,7 @@ export default function Contact() {
   return (
     <Blob id="contact" className="py-20 px-4 md:px-6 bg-surface">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel>{t.contact.label}</SectionLabel>
-        <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.contact.heading}</h2>
+        <SectionLabel>{t.contact.label}</SectionLabel>.<h2 className="text-4xl md:text-5xl font-black tracking-tight mb-10 leading-tight">{t.contact.heading}</h2>
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-10">
           <div className="flex flex-col gap-4">
             {[
