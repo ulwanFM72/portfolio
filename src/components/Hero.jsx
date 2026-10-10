@@ -51,7 +51,6 @@ export default function Hero({ onNavigate }) {
           </div>
         </div>
       </div>
-      .
     </Blob>
   );
 }

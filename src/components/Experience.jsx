@@ -37,7 +37,6 @@ export default function Experience() {
           })}
         </div>
       </div>
-      .
     </Blob>
   );
 }
