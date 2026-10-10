@@ -73,7 +73,6 @@ export default function Navbar({ active, onNavigate }) {
             </button>
           )}
         </div>
-        .
       </div>
     </header>
   );

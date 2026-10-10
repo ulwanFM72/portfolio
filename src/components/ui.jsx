@@ -42,7 +42,6 @@ export function ToggleSwitch({ checked, onChange, leftLabel, rightLabel, ariaLab
       <span className="relative z-10 w-7 h-7 bg-lime border-2 border-ink transition-transform duration-200 flex items-center justify-center text-[9px] font-black" style={{ transform: checked ? 'translateX(34px)' : 'translateX(0px)' }}>
         {checked ? rightLabel : leftLabel}
       </span>
-      .
     </button>
   );
 }
