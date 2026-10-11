@@ -58,7 +58,6 @@ export default function Navbar({ active, onNavigate }) {
           </div>
         </div>
       </div>
-
       <div className={`md:hidden mx-3 overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${open ? 'max-h-[28rem] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
         <div className="flex flex-col bg-surface border-[3px] border-ink shadow-brut-sm">
           {NAV_ITEMS.map((item, i) => (
@@ -74,6 +73,7 @@ export default function Navbar({ active, onNavigate }) {
           )}
         </div>
       </div>
+      .
     </header>
   );
 }
