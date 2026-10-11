@@ -26,6 +26,7 @@ export default function Footer({ onNavigate }) {
           })}
         </div>
       </div>
+      .
     </footer>
   );
 }
