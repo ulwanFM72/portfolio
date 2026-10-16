@@ -73,6 +73,7 @@ export default function Navbar({ active, onNavigate }) {
           )}
         </div>
       </div>
+      .
     </header>
   );
 }
