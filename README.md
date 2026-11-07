@@ -1,95 +1,138 @@
-# Portofolio Neobrutalism — Next.js
+# Personal Developer Portfolio
 
-Website portofolio pribadi berbentuk Single Page Application (SPA) dengan gaya
-visual Neobrutalism, dibangun dengan Next.js (Pages Router) + React + Tailwind CSS.
+A personal portfolio website built to showcase my profile, technical skills, projects, and professional journey as an Informatics student and aspiring web developer.
 
-## Struktur Proyek
+**Live Demo:** [View Portfolio](https://portfolio-ulwanfm72s-projects.vercel.app/)
+
+## Overview
+
+This project is a single-page personal portfolio website designed with a bold and modern **Neobrutalism** aesthetic. It presents my background, technical skills, projects, experience, and contact information in an interactive and organized layout.
+
+The website is built with Next.js, React, and Tailwind CSS, with an emphasis on responsive design, reusable components, and maintainable code.
+
+## Features
+
+- **Home** — Introduction, developer status, and navigation to important sections.
+- **About** — Personal profile and background.
+- **Skills** — Overview of technical skills and technologies.
+- **Projects** — Showcase of projects, descriptions, and technology stacks.
+- **Experience** — Relevant work and organizational experience.
+- **Contact** — Contact form and links to social media.
+- **Responsive Design** — Layout adapted for different screen sizes.
+- **Neobrutalism UI** — Bold colors, strong borders, and distinctive shadows.
+- **Reusable Components** — Modular components for a consistent interface.
+
+## Tech Stack
+
+- **Framework:** Next.js (Pages Router)
+- **UI Library:** React
+- **Styling:** Tailwind CSS
+- **Language:** JavaScript
+- **Icons:** Lucide React
+- **Version Control:** Git and GitHub
+- **Deployment:** Vercel
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm (included with Node.js)
+- Git
+
+### Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/ulwanFM72/portfolio.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd portfolio
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
 
 ```text
-src/
-├── components/
-│   ├── ui.jsx          # Primitif bersama (SectionLabel, BrutButton, Blob)
-│   ├── Navbar.jsx
-│   ├── Hero.jsx
-│   ├── About.jsx
-│   ├── Skills.jsx
-│   ├── Projects.jsx
-│   ├── Experience.jsx
-│   ├── Contact.jsx
-│   └── Footer.jsx
-├── data/
-│   ├── site.js         # Nama, profil, nav items, sosial media
-│   ├── skills.js
-│   ├── projects.js
-│   └── experiences.js
-├── assets/
-│   └── images/         # Taruh foto profil & screenshot proyek di sini
-├── styles/
-│   └── globals.css
-└── pages/
-    ├── _app.js
-    └── index.js         # Merangkai semua section jadi satu halaman
+portfolio/
+├── src/
+│   ├── components/
+│   │   ├── ui.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── data/
+│   │   ├── site.js
+│   │   ├── skills.js
+│   │   ├── projects.js
+│   │   └── experiences.js
+│   ├── assets/
+│   │   └── images/
+│   ├── styles/
+│   │   └── globals.css
+│   └── pages/
+│       ├── _app.js
+│       └── index.js
+├── .gitignore
+├── next.config.js
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── README.md
 ```
 
-## Menjalankan Secara Lokal
+## Customization
 
-```bash
-npm install
-npm run dev
-```
+Personal information and portfolio content can be updated in the `src/data/` directory:
 
-Buka `http://localhost:3000` di browser.
+- `site.js` — Profile information, navigation, and social links.
+- `skills.js` — Technical skills and proficiency information.
+- `projects.js` — Project descriptions, technologies, and links.
+- `experiences.js` — Work and organizational experience.
 
-## Build untuk Produksi
+To change the visual layout or add new sections, edit the relevant components in `src/components/`.
+
+## Production Build
+
+To create a production build, run:
 
 ```bash
 npm run build
+```
+
+To run the production version locally:
+
+```bash
 npm run start
 ```
 
-## Mengganti Konten
+## Contact
 
-Semua konten personal ada di folder `src/data/`:
+Feel free to explore my projects and connect with me through the links provided on my portfolio website.
 
-- `site.js` — nama, profesi, email, nomor WhatsApp, lokasi, link sosial media.
-- `skills.js` — daftar teknologi & level kemampuan.
-- `projects.js` — daftar proyek (nama, deskripsi, tech stack, link demo/GitHub).
-- `experiences.js` — daftar pengalaman kerja/organisasi.
-
-Tidak perlu menyentuh komponen di `src/components/` kecuali ingin mengubah
-tata letak atau menambah section baru.
-
-## Menambahkan Foto Asli
-
-Saat ini foto profil dan thumbnail proyek memakai inisial/blok warna sebagai
-placeholder (sesuai gaya Neobrutalism). Untuk memakai foto asli:
-
-1. Taruh file gambar di `src/assets/images/`.
-2. Di `Hero.jsx` atau `Projects.jsx`, ganti blok `<span>...</span>` dengan
-   komponen `next/image`, misalnya:
-
-   ```jsx
-   import Image from "next/image";
-   import profilePic from "@/assets/images/profile.jpg";
-
-   <Image src={profilePic} alt="Foto profil" className="object-cover" />;
-   ```
-
-## Menghubungkan Form Contact ke Layanan Nyata
-
-Form di `Contact.jsx` saat ini hanya melakukan validasi di sisi client dan
-menampilkan pesan sukses secara lokal (belum benar-benar mengirim email).
-Untuk membuatnya fungsional, pilih salah satu:
-
-- **Formspree / Getform** — ganti `onSubmit` dengan `fetch` ke endpoint mereka.
-- **EmailJS** — kirim email langsung dari browser tanpa backend.
-- **API Route sendiri** — buat `src/pages/api/contact.js` yang mengirim email
-  lewat Nodemailer atau layanan seperti Resend, lalu panggil endpoint itu
-  dari `handleSubmit`.
-
-## Catatan Desain
-
-Token warna & bayangan Neobrutalism diatur di `tailwind.config.js`
-(`colors.ink/base/blue/pink/lime`, `boxShadow.brut/brut-sm`) supaya konsisten
-dan mudah diubah dari satu tempat.
-# portfolio
+**Thank you for visiting my repository!**
